@@ -1,0 +1,48 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Result {
+
+   public static void main(String[] args)
+   {
+       Scanner obj=new Scanner(System.in);
+       int n=obj.nextInt();
+       int grade=0;
+       int arr[]=new int[n];
+       int arrg[]=new int[n];
+       for(int i=0;i<n;i++)
+       {
+           arr[i]=obj.nextInt();
+       }
+       for(int i=0;i<n;i++)
+       {
+           int mul5=arr[i]/5;
+           int nexmul=(mul5+1)*5;
+           if(arr[i]<40 && arr[i]>=38 && arr[i]-nexmul<3)
+           {
+           arrg[i]=nexmul;
+           }
+           else if(arr[i]>40 && nexmul-arr[i]<3)
+           {
+               arrg[i]=nexmul;
+           }
+           else if(arr[i]>40 && nexmul-arr[i]==3)
+           {
+               arrg[i]=arr[i];
+           }
+           else
+           {
+               arrg[i]=arr[i];
+           }
+       }
+       for(int i=0;i<n;i++)
+       {
+           System.out.println(arrg[i]+" ");
+       }
+   }
+}
